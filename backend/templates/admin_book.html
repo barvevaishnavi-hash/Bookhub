@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Books</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">📚 Manage Books</h2>
+
+    <a href="/admin/dashboard" class="btn btn-secondary mb-3">
+        ← Dashboard
+    </a>
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Buy Price</th>
+                <th>Rent Price</th>
+                <th>Stock</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for book in books %}
+
+        <tr>
+
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>₹{{ book.price }}</td>
+            <td>₹{{ book.rent_price }}</td>
+            <td>{{ book.stock }}</td>
+
+            <td>
+
+                <a href="/admin/edit/{{book.isbn}}" class="btn btn-warning btn-sm">
+                    Edit
+                </a>
+
+                <a href="/admin/delete/{{book.isbn}}" class="btn btn-danger btn-sm">
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

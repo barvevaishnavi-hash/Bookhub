@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BookHub Admin Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <h1 class="mb-4">📚 BookHub Admin Dashboard</h1>
+
+    <!-- Dashboard Cards -->
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h2>{{ total_books }}</h2>
+                    <p>Total Books</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h2>{{ total_users }}</h2>
+                    <p>Total Users</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h2>{{ buy_orders }}</h2>
+                    <p>Buy Orders</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h2>{{ rent_orders }}</h2>
+                    <p>Rent Orders</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Cards -->
+
+        <div class="col-md-3">
+            <div class="card shadow text-center border-warning">
+                <div class="card-body">
+                    <h2>{{ pending_rent }}</h2>
+                    <p>Pending Rent Requests</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center border-danger">
+                <div class="card-body">
+                    <h2>{{ out_of_stock }}</h2>
+                    <p>Out Of Stock</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center border-success">
+                <div class="card-body">
+                    <h2>₹{{ buy_revenue }}</h2>
+                    <p>Buy Revenue</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center border-primary">
+                <div class="card-body">
+                    <h2>₹{{ rent_revenue }}</h2>
+                    <p>Rent Revenue</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Buttons -->
+
+    <div class="d-flex flex-wrap gap-3">
+
+        <a href="/admin/books" class="btn btn-primary">
+            📚 Manage Books
+        </a>
+
+        <a href="/admin/orders" class="btn btn-success">
+            📦 Buy Orders
+        </a>
+
+        <a href="/admin/rent-orders" class="btn btn-warning">
+            📖 Rent Orders
+        </a>
+
+        <a href="/home" class="btn btn-danger">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

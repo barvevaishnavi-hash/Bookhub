@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>📚 BookHub</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        📚 BookHub
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="#categories">Categories</a>
+
+        <a href="#results">Books</a>
+
+        <a href="#">About</a>
+
+        <a href="/login" class="login-btn">
+            Login
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>Explore Thousands of Amazing Books</h1>
+
+        <p>
+
+            Buy or Rent your favourite books anytime, anywhere.
+
+            <br>
+
+            <b>271,000+</b> Books waiting for you!
+
+        </p>
+
+        <div class="search-box">
+
+            <input
+                id="searchBox"
+                type="text"
+                placeholder="Search by Book Title, Author or ISBN">
+
+            <button onclick="searchBooks()">
+
+                <i class="bi bi-search"></i>
+
+                Search
+
+            </button>
+
+        </div>
+
+        <div class="mt-4">
+
+            <a href="/category-page/Fiction" class="btn btn-success btn-lg me-3">
+
+                📚 Start Reading
+
+            </a>
+
+            <a href="#categories" class="btn btn-outline-light btn-lg">
+
+                Browse Categories
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories" id="categories">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">
+
+            📂 Browse Categories
+
+        </h2>
+
+        <div class="category-grid">
+
+            <a href="/category-page/Fiction" class="category-card">
+                📖 Fiction
+            </a>
+
+            <a href="/category-page/Education" class="category-card">
+                🎓 Education
+            </a>
+
+            <a href="/category-page/Horror" class="category-card">
+                👻 Horror
+            </a>
+
+            <a href="/category-page/Romance" class="category-card">
+                ❤️ Romance
+            </a>
+
+            <a href="/category-page/Science" class="category-card">
+                🔬 Science
+            </a>
+
+            <a href="/category-page/Children" class="category-card">
+                👶 Children
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat-card">
+
+        <h2>271K+</h2>
+
+        <p>Books</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>50K+</h2>
+
+        <p>Authors</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>100+</h2>
+
+        <p>Publishers</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>24×7</h2>
+
+        <p>Online Service</p>
+
+    </div>
+
+</section>
+
+<!-- ================= FEATURED BOOKS ================= -->
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-5">
+
+        ⭐ Featured Books
+
+    </h2>
+
+</div>
+
+<!-- Search results appear here -->
+
+<div
+    id="results"
+    class="results">
+
+</div>
+
+<!-- ================= WHY BOOKHUB ================= -->
+
+<section class="container my-5">
+
+    <div class="row text-center">
+
+        <div class="col-md-4">
+
+            <i class="bi bi-book-half display-4 text-success"></i>
+
+            <h4 class="mt-3">Huge Collection</h4>
+
+            <p>
+
+                Browse over 271,000 books across multiple categories.
+
+            </p>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <i class="bi bi-currency-rupee display-4 text-warning"></i>
+
+            <h4 class="mt-3">Affordable Rentals</h4>
+
+            <p>
+
+                Rent books at low prices and save money.
+
+            </p>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <i class="bi bi-lightning-charge display-4 text-primary"></i>
+
+            <h4 class="mt-3">Fast Search</h4>
+
+            <p>
+
+                Find books instantly using title, author or ISBN.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+
+        📚 BookHub
+
+    </h3>
+
+    <p>
+
+        Your Digital Library for Buying & Renting Books
+
+    </p>
+
+    <hr>
+
+    <p>
+
+        <i class="bi bi-envelope-fill"></i>
+
+        support@bookhub.com
+
+        &nbsp; | &nbsp;
+
+        <i class="bi bi-geo-alt-fill"></i>
+
+        Nashik, Maharashtra
+
+        &nbsp; | &nbsp;
+
+        <i class="bi bi-telephone-fill"></i>
+
+        +91 98765 43210
+
+    </p>
+
+    <small>
+
+        © 2026 BookHub | Built with ❤️ using FastAPI, MySQL & Bootstrap
+
+    </small>
+
+</footer>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+
+<script src="/static/js/script.js"></script>
+
+</body>
+
+</html>

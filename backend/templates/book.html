@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ book.title }}</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        📚 BookHub
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/home">Home</a>
+
+    </div>
+
+</nav>
+
+<div class="container mt-5">
+
+    <div class="row">
+
+        <!-- Book Image -->
+
+        <div class="col-md-4 text-center">
+
+            <img
+                src="{{ book.image_url }}"
+                class="img-fluid rounded shadow"
+                style="max-height:450px;">
+
+        </div>
+
+        <!-- Book Details -->
+
+        <div class="col-md-8">
+
+            <h2>{{ book.title }}</h2>
+
+            <hr>
+
+            <h5>✍️ Author</h5>
+            <p>{{ book.author }}</p>
+
+            <h5>🏢 Publisher</h5>
+            <p>{{ book.publisher }}</p>
+
+            <h5>📅 Publication Year</h5>
+            <p>{{ book.publication_year }}</p>
+
+            <h5>🔢 ISBN</h5>
+            <p>{{ book.isbn }}</p>
+
+            <a href="/category-page/{{ book.category }}"
+               class="btn btn-primary">
+
+                ← Back to Category
+
+            </a>
+
+            <h3>₹ {{ book.price }}</h3>
+
+<p>
+    Rent Price:
+    <b>₹ {{ book.rent_price }}</b>
+</p>
+
+<div class="book-buttons">
+
+    <a href="/checkout/{{ book.isbn }}?type=Buy" class="buy-btn">
+    🛒 Buy Now
+</a>
+
+    <a href="/checkout/{{ book.isbn }}?type=Rent" class="rent-btn">
+    📚 Rent Now
+</a>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="my-5">
+
+<div class="container">
+
+    <h3 class="mb-4">
+
+        ❤️ More Books by {{ book.author }}
+
+    </h3>
+
+    <div class="results">
+
+        {% for b in author_books %}
+
+        <div class="book">
+
+            <img src="{{ b.image_url }}">
+
+            <h3>{{ b.title }}</h3>
+
+            <p>{{ b.publication_year }}</p>
+
+            <a href="/book/{{ b.isbn }}"
+               class="btn btn-primary w-100">
+
+                View Details
+
+            </a>
+
+            <a href="/checkout/{{ b.isbn }}?type=Buy">
+    <button class="buy-btn">🛒 Buy Now</button>
+</a>
+
+<a href="/checkout/{{ b.isbn }}?type=Rent">
+    <button class="rent-btn">📚 Rent Now</button>
+</a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BookHub Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#2b4dbb,#4f46e5);
+}
+
+.login-box{
+
+    width:420px;
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.logo{
+
+    font-size:45px;
+    margin-bottom:10px;
+
+}
+
+h1{
+
+    color:#243b8f;
+    margin-bottom:10px;
+
+}
+
+p{
+
+    color:#666;
+    margin-bottom:30px;
+
+}
+
+input{
+
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+
+}
+
+input:focus{
+
+    outline:none;
+    border-color:#3b5bdb;
+
+}
+
+button{
+
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#ff9800;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#e68900;
+
+}
+
+.bottom{
+
+    margin-top:25px;
+    font-size:15px;
+
+}
+
+.bottom a{
+
+    color:#2b4dbb;
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+.bottom a:hover{
+
+    text-decoration:underline;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<div class="logo">📚</div>
+
+<h1>BookHub</h1>
+
+<p>Welcome Back!</p>
+
+<form action="/login" method="post">
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required>
+
+    <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        required>
+
+    <button type="submit">
+        Login
+    </button>
+
+</form>
+
+<div class="bottom">
+
+Don't have an account?
+
+<a href="/register">
+
+Register
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
