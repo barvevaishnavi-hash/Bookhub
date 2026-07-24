@@ -7,6 +7,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 from sqlalchemy import create_engine, text
 import pandas as pd
+from sqlalchemy import create_engine
+
 
 app = FastAPI()
 
@@ -24,7 +26,8 @@ app.add_middleware(
 
 # Database
 engine = create_engine(
-    "mysql+pymysql://root:%40pass123@127.0.0.1:3306/bookhub"
+    "mysql+pymysql://root:ubmVuVNFzorFXnnexAwbdWqTdKnuTwcb@sakura.proxy.rlwy.net:29766/railway",
+    pool_pre_ping=True
 )
 
 templates = Jinja2Templates(directory="templates")
