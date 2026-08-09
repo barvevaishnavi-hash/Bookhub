@@ -57,26 +57,24 @@ def register_user(
     phone: str = Form(...),
     password: str = Form(...)
 ):
+
     with engine.begin() as conn:
         conn.execute(
             text("""
                 INSERT INTO users
-                (full_name, email, phone, password)
+                (name, email, phone, password)
                 VALUES
-                (:full_name, :email, :phone, :password)
+                (:name, :email, :phone, :password)
             """),
             {
-                "full_name": full_name,
+                "name": full_name,
                 "email": email,
                 "phone": phone,
                 "password": password
             }
         )
 
-    return RedirectResponse(
-        url="/",
-        status_code=303
-    )
+    return RedirectResponse(url="/", status_code=303)
 
 # LOGIN USER
 @app.get("/login")
