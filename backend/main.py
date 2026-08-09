@@ -567,8 +567,9 @@ def rent_book(isbn: str):
 @app.get("/rent-request")
 def rent_request(request: Request):
     return templates.TemplateResponse(
-        "rent_request.html",
-        {
+        request=request,
+        name="rent_request.html",
+        context={
             "request": request
         }
     )
