@@ -44,8 +44,9 @@ def login_page(request: Request):
 @app.get("/register")
 def register_page(request: Request):
     return templates.TemplateResponse(
-        "register.html",
-        {"request": request}
+        request=request,
+        name="register.html",
+        context={"request": request}
     )
 
 # SAVE USER
